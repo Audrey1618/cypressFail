@@ -4,8 +4,8 @@ describe('Test GET request', () => {
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			method: 'GET',
 		}).then((response) => {
-			expect(response.status).to.eq(201);
-			expect(response.body.length).to.eq(300);
+			expect(response.status).to.eq(203);
+			expect(response.body.length).to.eq(100);
 		});
 	});
 });
