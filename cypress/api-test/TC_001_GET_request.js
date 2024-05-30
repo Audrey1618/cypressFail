@@ -5,7 +5,7 @@ describe('Test GET request', () => {
 			method: 'GET',
 		}).then((response) => {
 			expect(response.status).to.eq(201);
-			expect(response.body.length).to.eq(200);
+			expect(response.body.length).to.eq(300);
 		});
 	});
 });
