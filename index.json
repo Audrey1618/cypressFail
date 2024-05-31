@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2024-05-31T12:58:44.523Z",
-    "end": "2024-05-31T12:58:56.817Z",
-    "duration": 12294
+    "start": "2024-05-31T14:01:13.231Z",
+    "end": "2024-05-31T14:01:25.687Z",
+    "duration": 12456
   },
   "results": [
     {
-      "uuid": "66e31e19-7ae4-46a3-88ea-d773d5bed0a0",
+      "uuid": "eeb070ba-726e-42b3-8efa-6184d9d19265",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_002_GET_request_more.js",
       "file": "cypress\\api-test\\TC_002_GET_request_more.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b54732ee-7071-4536-9548-a25037964bd2",
+          "uuid": "484cc995-a28e-4ea0-bedc-abfeff885c19",
           "title": "Test GET request",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should be able to send GET request and verify the response",
               "fullTitle": "Test GET request Should be able to send GET request and verify the response",
               "timedOut": null,
-              "duration": 85,
+              "duration": 81,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  method: 'GET'\n}).then(response => {\n  // Destructure\n  let {\n    status,\n    body\n  } = response;\n  // Get a random element from array object\n  let roundedRandomIndex = Math.floor(Math.random() * body.length);\n  let randomObject = body[roundedRandomIndex];\n  // Verification\n  // expect(randomObject)\n  verifyNotEmpty('UserID', randomObject.userId);\n  verifyNotEmpty('Title', randomObject.title);\n  verifyNotEmpty('Body', randomObject.body);\n  //{\"userId\":6,\"id\":54,\"title\":\"sit asperiores ipsam eveniet odio non quia\",\"body\":\"totam corporis dignissimos\\nvitae dolorem ut occaecati accusamus\\nex velit deserunt\\net exercitationem vero incidunt corrupti mollitia\"}\n});",
               "err": {},
-              "uuid": "3843cf19-823a-4e3e-bb14-f4903dc3fe33",
-              "parentUUID": "b54732ee-7071-4536-9548-a25037964bd2",
+              "uuid": "84c4ee6a-ddac-4f87-b13c-e102cede680a",
+              "parentUUID": "484cc995-a28e-4ea0-bedc-abfeff885c19",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3843cf19-823a-4e3e-bb14-f4903dc3fe33"
+            "84c4ee6a-ddac-4f87-b13c-e102cede680a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 85,
+          "duration": 81,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "17af5dfe-0ae6-4fac-bbf9-7c9397e8b490",
+      "uuid": "73ae9254-4291-40e9-81e6-943b73c254a3",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_003_POST_request.js",
       "file": "cypress\\api-test\\TC_003_POST_request.js",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "09e1eacc-0549-47b1-a800-860a95dce146",
+          "uuid": "f917b0ac-7a36-42f0-a423-1d2d00fea6ea",
           "title": "Test POST request",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "Should be able to send POST request and get response",
               "fullTitle": "Test POST request Should be able to send POST request and get response",
               "timedOut": null,
-              "duration": 871,
+              "duration": 327,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -105,20 +105,20 @@
               "context": null,
               "code": "let url = 'https://jsonplaceholder.typicode.com/posts';\nlet header = {\n  'Content-type': 'application/json; charset=UTF-8'\n};\nlet requestBody = {\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n};\nlet requestObject = {\n  method: 'post',\n  url: url,\n  headers: header,\n  body: JSON.stringify(requestBody)\n};\ncy.request(requestObject).then(res => {\n  let {\n    status,\n    body\n  } = res;\n  expect(status).to.eq(201);\n  let {\n    userId,\n    id,\n    title\n  } = body;\n  let responseBody = body.body;\n  expect(userId).to.eq(requestBody.userId, 'UserId is not correct');\n  expect(id).to.eq(101, 'id is not correct');\n  expect(title).to.eq(requestBody.title, 'Title is not correct');\n  expect(responseBody).to.eq(requestBody.body, 'Body is not correct');\n});",
               "err": {},
-              "uuid": "401e0bf2-d013-4cfe-b24f-9bf2701f37a2",
-              "parentUUID": "09e1eacc-0549-47b1-a800-860a95dce146",
+              "uuid": "371ff0b4-9129-4d1a-9ab6-dce255aa8998",
+              "parentUUID": "f917b0ac-7a36-42f0-a423-1d2d00fea6ea",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "401e0bf2-d013-4cfe-b24f-9bf2701f37a2"
+            "371ff0b4-9129-4d1a-9ab6-dce255aa8998"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 871,
+          "duration": 327,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "250a4c63-b3fa-434e-96c7-43daf906eb1a",
+      "uuid": "356c1ddc-85fe-41ff-87d5-ebe37e1a848c",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_004_PUT_request.js",
       "file": "cypress\\api-test\\TC_004_PUT_request.js",
@@ -143,7 +143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8ea3204c-a16f-469d-bf5c-928afdc6616e",
+          "uuid": "0dd57552-84a3-43c8-9de8-99a7e55ea14b",
           "title": "Test PUT request",
           "fullFile": "",
           "file": "",
@@ -154,7 +154,7 @@
               "title": "Should be able to send a request with PUT method",
               "fullTitle": "Test PUT request Should be able to send a request with PUT method",
               "timedOut": null,
-              "duration": 868,
+              "duration": 808,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -163,20 +163,20 @@
               "context": null,
               "code": "let url = 'https://jsonplaceholder.typicode.com/posts/1';\nlet header = {\n  'Content-type': 'application/json; charset=UTF-8'\n};\nlet requestBody = {\n  id: 1,\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n};\nlet requestObject = {\n  method: 'PUT',\n  url: url,\n  headers: header,\n  body: JSON.stringify(requestBody)\n};\ncy.request(requestObject).then(res => {\n  let {\n    status\n  } = res;\n  let resBody = res.body;\n  let {\n    userId,\n    id,\n    title,\n    body\n  } = resBody;\n  // cy.log(JSON.stringify(res));\n  // cy.log(JSON.stringify(resBody));\n  expect(id).to.eq(requestBody.id, 'Id is not correct');\n  expect(title).to.eq(requestBody.title, 'title is not correct');\n  expect(body).to.eq(requestBody.body, 'body is not correct');\n  expect(userId).to.eq(requestBody.userId, 'userId is not correct');\n});",
               "err": {},
-              "uuid": "2367f480-283e-406a-95b0-474bf351225f",
-              "parentUUID": "8ea3204c-a16f-469d-bf5c-928afdc6616e",
+              "uuid": "853b35cc-923b-4953-83df-60499be037fb",
+              "parentUUID": "0dd57552-84a3-43c8-9de8-99a7e55ea14b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2367f480-283e-406a-95b0-474bf351225f"
+            "853b35cc-923b-4953-83df-60499be037fb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 868,
+          "duration": 808,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -192,7 +192,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "40fa2a6c-f172-4f41-a595-994ed6155620",
+      "uuid": "8d2e7d13-895b-4d2c-8521-41b21ea934df",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_005_DELETE_request.js",
       "file": "cypress\\api-test\\TC_005_DELETE_request.js",
@@ -201,7 +201,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ff2cf9e8-dd70-497c-8db1-f8171c2dabbe",
+          "uuid": "85304f16-7563-4b14-9a06-8d87ff4dd57d",
           "title": "Test PUT request",
           "fullFile": "",
           "file": "",
@@ -212,7 +212,7 @@
               "title": "Should be able to send a request with DELETE method",
               "fullTitle": "Test PUT request Should be able to send a request with DELETE method",
               "timedOut": null,
-              "duration": 351,
+              "duration": 338,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -221,20 +221,20 @@
               "context": null,
               "code": "let url = 'https://jsonplaceholder.typicode.com/posts/1';\ncy.request({\n  method: _Method.default.delete,\n  url: url\n}).then(res => {\n  let {\n    status\n  } = res;\n  cy.log(JSON.stringify(res));\n  expect(status).to.eq(200);\n  // cy.log(JSON.stringify(resBody));\n});",
               "err": {},
-              "uuid": "036ae014-808f-4fd3-9b23-c25d7ceef16b",
-              "parentUUID": "ff2cf9e8-dd70-497c-8db1-f8171c2dabbe",
+              "uuid": "10a75932-6b19-4571-949c-273fb5c28adb",
+              "parentUUID": "85304f16-7563-4b14-9a06-8d87ff4dd57d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "036ae014-808f-4fd3-9b23-c25d7ceef16b"
+            "10a75932-6b19-4571-949c-273fb5c28adb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 351,
+          "duration": 338,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -250,7 +250,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "4742a07f-fc61-4b18-9a9f-96209b673a13",
+      "uuid": "0dc9cefd-dc89-4908-aae0-d7f2cbe8217a",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_006_handle async.js",
       "file": "cypress\\api-test\\TC_006_handle async.js",
@@ -259,7 +259,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "026bcb15-286e-485e-8084-19bdd2675530",
+          "uuid": "3451d581-a329-4603-966b-5e3aa61a1c57",
           "title": "Test handling async request in cypress",
           "fullFile": "",
           "file": "",
@@ -279,15 +279,15 @@
               "context": null,
               "code": "let createdPostBody = {\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n};\nlet updatePutBody = {\n  title: 'fooooooo',\n  body: 'bar2',\n  userId: 1\n};\n// CRUD: Create - Read - Update - Delete\ncy.createPost(createdPostBody).then(res => {\n  cy.getPost(Number(res.body.id) - 1);\n}).then(res => {\n  cy.updatePost(Number(res.body.id), updatePutBody);\n}).then(res => {\n  cy.deletePost(Number(res.body.id));\n}).then(res => {\n  cy.log(JSON.stringify(res));\n});",
               "err": {},
-              "uuid": "592243b1-654e-42b0-9484-c869bd9bd348",
-              "parentUUID": "026bcb15-286e-485e-8084-19bdd2675530",
+              "uuid": "58052c91-aa53-48e8-8732-da3251015d81",
+              "parentUUID": "3451d581-a329-4603-966b-5e3aa61a1c57",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "592243b1-654e-42b0-9484-c869bd9bd348"
+            "58052c91-aa53-48e8-8732-da3251015d81"
           ],
           "failures": [],
           "pending": [],
@@ -308,7 +308,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "bd98d829-1193-425a-a5cd-5edc880e3df6",
+      "uuid": "df9b8153-2698-4009-bfea-328f788f72d1",
       "title": "",
       "fullFile": "cypress\\api-test\\TC_001_GET_request.js",
       "file": "cypress\\api-test\\TC_001_GET_request.js",
@@ -317,7 +317,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "304256a5-0f11-49a3-b4a9-fbe412b10925",
+          "uuid": "759d3359-5b33-4cdc-9da8-3996b39c6112",
           "title": "Test GET request",
           "fullFile": "",
           "file": "",
@@ -328,21 +328,21 @@
               "title": "Should be able to send GET request and verify the response",
               "fullTitle": "Test GET request Should be able to send GET request and verify the response",
               "timedOut": null,
-              "duration": 525,
+              "duration": 440,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  method: 'GET'\n}).then(response => {\n  expect(response.status).to.eq(203);\n  expect(response.body.length).to.eq(100);\n});",
+              "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  method: 'GET'\n}).then(response => {\n  expect(response.status).to.eq(400);\n  expect(response.body.length).to.eq(100);\n});",
               "err": {
-                "message": "AssertionError: expected 200 to equal 203",
-                "estack": "AssertionError: expected 200 to equal 203\n    at Context.eval (webpack://cypress-api-learning/./cypress/api-test/TC_001_GET_request.js:7:30)",
-                "diff": "- 200\n+ 203\n"
+                "message": "AssertionError: expected 200 to equal 400",
+                "estack": "AssertionError: expected 200 to equal 400\n    at Context.eval (webpack://cypress-api-learning/./cypress/api-test/TC_001_GET_request.js:7:30)",
+                "diff": "- 200\n+ 400\n"
               },
-              "uuid": "5d2adda2-3a09-49f1-aa7a-ad5b48ff0abe",
-              "parentUUID": "304256a5-0f11-49a3-b4a9-fbe412b10925",
+              "uuid": "ad4222b0-f05d-4262-9868-d531aeff3ff4",
+              "parentUUID": "759d3359-5b33-4cdc-9da8-3996b39c6112",
               "isHook": false,
               "skipped": false
             }
@@ -350,11 +350,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5d2adda2-3a09-49f1-aa7a-ad5b48ff0abe"
+            "ad4222b0-f05d-4262-9868-d531aeff3ff4"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 525,
+          "duration": 440,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
