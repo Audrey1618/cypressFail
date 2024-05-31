@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-31T14:12:49.300Z",
+    "end": "2024-05-31T14:12:49.795Z",
+    "duration": 495,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ce22bf9f-bb00-4222-a36e-e29ec525f3b1",
+      "title": "",
+      "fullFile": "cypress\\api-test\\TC_001_GET_request.js",
+      "file": "cypress\\api-test\\TC_001_GET_request.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20eb1cd6-505f-4631-8b35-cba498a6ec41",
+          "title": "Test GET request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be able to send GET request and verify the response",
+              "fullTitle": "Test GET request Should be able to send GET request and verify the response",
+              "timedOut": null,
+              "duration": 442,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  method: 'GET'\n}).then(response => {\n  expect(response.status).to.eq(500);\n  expect(response.body.length).to.eq(100);\n});",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 500",
+                "estack": "AssertionError: expected 200 to equal 500\n    at Context.eval (webpack://cypress-api-learning/./cypress/api-test/TC_001_GET_request.js:7:30)",
+                "diff": "- 200\n+ 500\n"
+              },
+              "uuid": "0e2bb151-7095-4a5c-afd7-785b497c4746",
+              "parentUUID": "20eb1cd6-505f-4631-8b35-cba498a6ec41",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e2bb151-7095-4a5c-afd7-785b497c4746"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 442,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
